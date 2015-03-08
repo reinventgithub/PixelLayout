@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  WXLScaleTableViewController.h
 //  WXLAutolayout
 //
 //  Created by wxl on 15/3/6.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface WXLScaleTableViewController : UITableViewController
 
 @end
-
