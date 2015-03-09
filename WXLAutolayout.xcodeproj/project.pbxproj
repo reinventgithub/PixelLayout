@@ -11,6 +11,7 @@
 		D84388911AABEF6200A6336E /* WXLScaleTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D843888C1AABEF6200A6336E /* WXLScaleTableViewController.m */; };
 		D84388921AABEF6200A6336E /* WXLScaleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D84388901AABEF6200A6336E /* WXLScaleCell.m */; };
 		D84388951AABEFA600A6336E /* WXLDemoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D84388941AABEFA600A6336E /* WXLDemoTableViewController.m */; };
+		D85808BB1AAD3FF8003836F1 /* WXLAutolayout.m in Sources */ = {isa = PBXBuildFile; fileRef = D85808BA1AAD3FF8003836F1 /* WXLAutolayout.m */; };
 		D8B7FD3E1AABFE1C0063370C /* WXLNotScaleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D8B7FD3D1AABFE1C0063370C /* WXLNotScaleCell.m */; };
 		D8B7FD411AABFE270063370C /* WXLNotScaleTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8B7FD401AABFE270063370C /* WXLNotScaleTableViewController.m */; };
 		D8C80C8D1AA94FAD00882185 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D8C80C8C1AA94FAD00882185 /* main.m */; };
@@ -19,7 +20,6 @@
 		D8C80C981AA94FAD00882185 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8C80C971AA94FAD00882185 /* Images.xcassets */; };
 		D8C80C9B1AA94FAD00882185 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8C80C991AA94FAD00882185 /* LaunchScreen.xib */; };
 		D8C80CA71AA94FAD00882185 /* WXLAutolayoutTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D8C80CA61AA94FAD00882185 /* WXLAutolayoutTests.m */; };
-		D8C80CEE1AA99F6C00882185 /* WXLAutolayout.m in Sources */ = {isa = PBXBuildFile; fileRef = D8C80CED1AA99F6C00882185 /* WXLAutolayout.m */; };
 		D8C80CFC1AA9A05D00882185 /* UIColor+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = D8C80CFB1AA9A05D00882185 /* UIColor+Extension.m */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +43,8 @@
 		D84388901AABEF6200A6336E /* WXLScaleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXLScaleCell.m; sourceTree = "<group>"; };
 		D84388931AABEFA600A6336E /* WXLDemoTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXLDemoTableViewController.h; sourceTree = "<group>"; };
 		D84388941AABEFA600A6336E /* WXLDemoTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXLDemoTableViewController.m; sourceTree = "<group>"; };
+		D85808B91AAD3FF8003836F1 /* WXLAutolayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXLAutolayout.h; sourceTree = "<group>"; };
+		D85808BA1AAD3FF8003836F1 /* WXLAutolayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXLAutolayout.m; sourceTree = "<group>"; };
 		D8B7FD3C1AABFE1C0063370C /* WXLNotScaleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXLNotScaleCell.h; sourceTree = "<group>"; };
 		D8B7FD3D1AABFE1C0063370C /* WXLNotScaleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXLNotScaleCell.m; sourceTree = "<group>"; };
 		D8B7FD3F1AABFE270063370C /* WXLNotScaleTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXLNotScaleTableViewController.h; sourceTree = "<group>"; };
@@ -58,8 +60,6 @@
 		D8C80CA01AA94FAD00882185 /* WXLAutolayoutTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WXLAutolayoutTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8C80CA51AA94FAD00882185 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D8C80CA61AA94FAD00882185 /* WXLAutolayoutTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WXLAutolayoutTests.m; sourceTree = "<group>"; };
-		D8C80CEC1AA99F6C00882185 /* WXLAutolayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXLAutolayout.h; sourceTree = "<group>"; };
-		D8C80CED1AA99F6C00882185 /* WXLAutolayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXLAutolayout.m; sourceTree = "<group>"; };
 		D8C80CFA1AA9A05D00882185 /* UIColor+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Extension.h"; sourceTree = "<group>"; };
 		D8C80CFB1AA9A05D00882185 /* UIColor+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Extension.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -104,7 +104,6 @@
 			isa = PBXGroup;
 			children = (
 				D843888A1AABEF6200A6336E /* Controller */,
-				D843888D1AABEF6200A6336E /* Model */,
 				D843888E1AABEF6200A6336E /* View */,
 			);
 			path = Push;
@@ -121,13 +120,6 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		D843888D1AABEF6200A6336E /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		D843888E1AABEF6200A6336E /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -137,6 +129,15 @@
 				D8B7FD3D1AABFE1C0063370C /* WXLNotScaleCell.m */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		D85808B81AAD3FF8003836F1 /* WXLAutolayout */ = {
+			isa = PBXGroup;
+			children = (
+				D85808B91AAD3FF8003836F1 /* WXLAutolayout.h */,
+				D85808BA1AAD3FF8003836F1 /* WXLAutolayout.m */,
+			);
+			path = WXLAutolayout;
 			sourceTree = "<group>";
 		};
 		D8C80C7E1AA94FAD00882185 = {
@@ -163,13 +164,12 @@
 			isa = PBXGroup;
 			children = (
 				D8C80CEF1AA99FDE00882185 /* Demo */,
-				D8C80CEB1AA99F6C00882185 /* source */,
+				D85808B81AAD3FF8003836F1 /* WXLAutolayout */,
 				D8C80C8E1AA94FAD00882185 /* AppDelegate.h */,
 				D8C80C8F1AA94FAD00882185 /* AppDelegate.m */,
 				D8C80C941AA94FAD00882185 /* Main.storyboard */,
 				D8C80C971AA94FAD00882185 /* Images.xcassets */,
 				D8C80C991AA94FAD00882185 /* LaunchScreen.xib */,
-				D8C80CF91AA9A05D00882185 /* Category */,
 				D8C80C8A1AA94FAD00882185 /* Supporting Files */,
 			);
 			path = WXLAutolayout;
@@ -201,22 +201,12 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		D8C80CEB1AA99F6C00882185 /* source */ = {
-			isa = PBXGroup;
-			children = (
-				D8C80CEC1AA99F6C00882185 /* WXLAutolayout.h */,
-				D8C80CED1AA99F6C00882185 /* WXLAutolayout.m */,
-			);
-			path = source;
-			sourceTree = "<group>";
-		};
 		D8C80CEF1AA99FDE00882185 /* Demo */ = {
 			isa = PBXGroup;
 			children = (
 				D8C80CF01AA99FDE00882185 /* Controller */,
-				D8C80CF31AA99FDE00882185 /* Model */,
-				D8C80CF41AA99FDE00882185 /* View */,
 				D84388891AABEF6200A6336E /* Push */,
+				D8C80CF91AA9A05D00882185 /* Category */,
 			);
 			path = Demo;
 			sourceTree = "<group>";
@@ -230,27 +220,14 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		D8C80CF31AA99FDE00882185 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		D8C80CF41AA99FDE00882185 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		D8C80CF91AA9A05D00882185 /* Category */ = {
 			isa = PBXGroup;
 			children = (
 				D8C80CFA1AA9A05D00882185 /* UIColor+Extension.h */,
 				D8C80CFB1AA9A05D00882185 /* UIColor+Extension.m */,
 			);
-			path = Category;
+			name = Category;
+			path = ../Category;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -389,7 +366,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D8B7FD3E1AABFE1C0063370C /* WXLNotScaleCell.m in Sources */,
-				D8C80CEE1AA99F6C00882185 /* WXLAutolayout.m in Sources */,
 				D8C80CFC1AA9A05D00882185 /* UIColor+Extension.m in Sources */,
 				D84388911AABEF6200A6336E /* WXLScaleTableViewController.m in Sources */,
 				D8C80C901AA94FAD00882185 /* AppDelegate.m in Sources */,
@@ -397,6 +373,7 @@
 				D8B7FD411AABFE270063370C /* WXLNotScaleTableViewController.m in Sources */,
 				D84388951AABEFA600A6336E /* WXLDemoTableViewController.m in Sources */,
 				D84388921AABEF6200A6336E /* WXLScaleCell.m in Sources */,
+				D85808BB1AAD3FF8003836F1 /* WXLAutolayout.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
