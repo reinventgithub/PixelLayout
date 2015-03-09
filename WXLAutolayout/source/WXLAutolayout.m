@@ -50,7 +50,7 @@
     WXLDesignScreenWidth = 768;
 #endif
 #ifdef iPadmini
-    WXLDesignScreenWidth = 768; //@x? or @2x?
+    WXLDesignScreenWidth = 768;
 #endif
 #ifdef iPadmini2
     WXLDesignScreenWidth = 768;
@@ -75,4 +75,13 @@ float scale()
     return WXLScale;
 }
 
++ (void)setDevice:(WXLDeviceOfUIDesign)device
+{
+    if (device) {
+        CGFloat currentScreenWidth = [UIScreen mainScreen].bounds.size.width;
+        WXLScale = currentScreenWidth/(float)device;
+    } else {
+        WXLScale = 1;
+    }
+}
 @end

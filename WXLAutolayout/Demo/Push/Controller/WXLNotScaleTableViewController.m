@@ -9,7 +9,6 @@
 #import "WXLNotScaleTableViewController.h"
 #import "UIColor+Extension.h"
 #import "WXLNotScaleCell.h"
-#define NOTSCALE
 #import "WXLAutolayout.h"
 
 @interface WXLNotScaleTableViewController ()
@@ -28,6 +27,9 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
     self.view.backgroundColor = WXLRandomColor();
+    self.navigationItem.title = @"Not Scale";
+    
+    [WXLAutolayout setDevice:NOTSCALE];
    
     self.tableView.rowHeight = 104*SCALE;
 }

@@ -18,7 +18,6 @@
 // 导入主头文件
 #import "Masonry.h"
 
-#define iPhone6
 #import "WXLAutolayout.h"
 
 @implementation WXLScaleCell
@@ -51,6 +50,8 @@
     bookImageView.backgroundColor = WXLRandomColor();
     [self.contentView addSubview:bookImageView];
 
+    [WXLAutolayout setDevice:iPhone6];
+    
     bookImageView.translatesAutoresizingMaskIntoConstraints = NO;
     [bookImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(15*SCALE);

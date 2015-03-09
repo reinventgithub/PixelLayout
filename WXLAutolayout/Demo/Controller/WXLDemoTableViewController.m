@@ -7,7 +7,6 @@
 //
 
 #import "WXLDemoTableViewController.h"
-#define iPhone6
 #import "WXLAutolayout.h"
 #import "WXLScaleTableViewController.h"
 #import "WXLNotScaleTableViewController.h"
@@ -27,6 +26,7 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
+    [WXLAutolayout setDevice:iPhone6];
     self.tableView.rowHeight = 104*SCALE;
 }
 

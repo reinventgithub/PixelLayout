@@ -27,6 +27,9 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
     self.view.backgroundColor = WXLRandomColor();
+    self.navigationItem.title = @"Scale";
+    
+    [WXLAutolayout setDevice:iPhone6];
    
     self.tableView.rowHeight = 104*SCALE;
 }

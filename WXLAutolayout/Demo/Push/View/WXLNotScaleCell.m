@@ -18,8 +18,6 @@
 // 导入主头文件
 #import "Masonry.h"
 
-#define iPhone6
-#define NOTSCALE
 #import "WXLAutolayout.h"
 
 @implementation WXLNotScaleCell
@@ -51,6 +49,8 @@
     UIImageView *bookImageView = [[UIImageView alloc] init];
     bookImageView.backgroundColor = WXLRandomColor();
     [self.contentView addSubview:bookImageView];
+    
+    [WXLAutolayout setDevice:NOTSCALE];
 
     bookImageView.translatesAutoresizingMaskIntoConstraints = NO;
     [bookImageView mas_makeConstraints:^(MASConstraintMaker *make) {
