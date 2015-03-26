@@ -62,6 +62,15 @@
 
     UILabel *bookNameLabel = [[UILabel alloc] init];
     bookNameLabel.backgroundColor = WXLRandomColor();
+    
+    bookNameLabel.text = @"鱼";
+    bookNameLabel.font = font(13);
+    
+    NSDictionary *attrs = @{NSFontAttributeName : bookNameLabel.font};
+    CGSize size = [bookNameLabel.text boundingRectWithSize:CGSizeMake(MAXFLOAT, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:attrs context:nil].size;
+    
+    NSLog(@"fontSize%@", NSStringFromCGSize(size));
+    
     [self.contentView addSubview:bookNameLabel];
     
     bookNameLabel.translatesAutoresizingMaskIntoConstraints = NO;
@@ -74,6 +83,8 @@
 
     UILabel *bookReadStatusLabel = [[UILabel alloc] init];
     bookReadStatusLabel.backgroundColor = WXLRandomColor();
+    bookReadStatusLabel.text = @"鱼羊野史";
+    bookReadStatusLabel.font = [UIFont systemFontOfSize:13];
     [self.contentView addSubview:bookReadStatusLabel];
     
     bookReadStatusLabel.translatesAutoresizingMaskIntoConstraints = NO;
@@ -84,16 +95,5 @@
         make.height.equalTo(18*SCALE);
     }];
 }
-
-//- (void)awakeFromNib {
-//    // Initialization code
-//    
-//}
-//
-//- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-//    [super setSelected:selected animated:animated];
-//
-//    // Configure the view for the selected state
-//}
 
 @end
