@@ -23,9 +23,9 @@
     self.view.backgroundColor = WXLRandomColor();
     self.navigationItem.title = @"Not Scale";
     
-    [WXLAutolayout setDevice:NOTSCALE];
-   
-    self.tableView.rowHeight = 104*SCALE;
+//    [WXLAutolayout setDevice:NOTSCALE];
+//   
+//    self.tableView.rowHeight = 104*SCALE;
 }
 
 #pragma mark - Table view data source

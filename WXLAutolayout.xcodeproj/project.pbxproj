@@ -11,6 +11,7 @@
 		D84388911AABEF6200A6336E /* WXLScaleTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D843888C1AABEF6200A6336E /* WXLScaleTableViewController.m */; };
 		D84388921AABEF6200A6336E /* WXLScaleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D84388901AABEF6200A6336E /* WXLScaleCell.m */; };
 		D84388951AABEFA600A6336E /* WXLDemoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D84388941AABEFA600A6336E /* WXLDemoTableViewController.m */; };
+		D8494DED1ACFC07B004C087F /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = D8494DEC1ACFC07B004C087F /* UIView+Extension.m */; };
 		D85808BB1AAD3FF8003836F1 /* WXLAutolayout.m in Sources */ = {isa = PBXBuildFile; fileRef = D85808BA1AAD3FF8003836F1 /* WXLAutolayout.m */; };
 		D8B7FD3E1AABFE1C0063370C /* WXLNotScaleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D8B7FD3D1AABFE1C0063370C /* WXLNotScaleCell.m */; };
 		D8B7FD411AABFE270063370C /* WXLNotScaleTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8B7FD401AABFE270063370C /* WXLNotScaleTableViewController.m */; };
@@ -43,8 +44,11 @@
 		D84388901AABEF6200A6336E /* WXLScaleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXLScaleCell.m; sourceTree = "<group>"; };
 		D84388931AABEFA600A6336E /* WXLDemoTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXLDemoTableViewController.h; sourceTree = "<group>"; };
 		D84388941AABEFA600A6336E /* WXLDemoTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXLDemoTableViewController.m; sourceTree = "<group>"; };
+		D8494DEB1ACFC07B004C087F /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
+		D8494DEC1ACFC07B004C087F /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
 		D85808B91AAD3FF8003836F1 /* WXLAutolayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXLAutolayout.h; sourceTree = "<group>"; };
 		D85808BA1AAD3FF8003836F1 /* WXLAutolayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXLAutolayout.m; sourceTree = "<group>"; };
+		D87F23871ACE61A3004F1E9E /* PowerLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PowerLog.h; sourceTree = "<group>"; };
 		D8B7FD3C1AABFE1C0063370C /* WXLNotScaleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXLNotScaleCell.h; sourceTree = "<group>"; };
 		D8B7FD3D1AABFE1C0063370C /* WXLNotScaleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXLNotScaleCell.m; sourceTree = "<group>"; };
 		D8B7FD3F1AABFE270063370C /* WXLNotScaleTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXLNotScaleTableViewController.h; sourceTree = "<group>"; };
@@ -140,6 +144,14 @@
 			path = WXLAutolayout;
 			sourceTree = "<group>";
 		};
+		D87F23861ACE61A3004F1E9E /* PowerLog */ = {
+			isa = PBXGroup;
+			children = (
+				D87F23871ACE61A3004F1E9E /* PowerLog.h */,
+			);
+			path = PowerLog;
+			sourceTree = "<group>";
+		};
 		D8C80C7E1AA94FAD00882185 = {
 			isa = PBXGroup;
 			children = (
@@ -165,6 +177,7 @@
 			children = (
 				D8C80CEF1AA99FDE00882185 /* Demo */,
 				D85808B81AAD3FF8003836F1 /* WXLAutolayout */,
+				D87F23861ACE61A3004F1E9E /* PowerLog */,
 				D8C80C8E1AA94FAD00882185 /* AppDelegate.h */,
 				D8C80C8F1AA94FAD00882185 /* AppDelegate.m */,
 				D8C80C941AA94FAD00882185 /* Main.storyboard */,
@@ -225,6 +238,8 @@
 			children = (
 				D8C80CFA1AA9A05D00882185 /* UIColor+Extension.h */,
 				D8C80CFB1AA9A05D00882185 /* UIColor+Extension.m */,
+				D8494DEB1ACFC07B004C087F /* UIView+Extension.h */,
+				D8494DEC1ACFC07B004C087F /* UIView+Extension.m */,
 			);
 			name = Category;
 			path = ../Category;
@@ -367,6 +382,7 @@
 			files = (
 				D8B7FD3E1AABFE1C0063370C /* WXLNotScaleCell.m in Sources */,
 				D8C80CFC1AA9A05D00882185 /* UIColor+Extension.m in Sources */,
+				D8494DED1ACFC07B004C087F /* UIView+Extension.m in Sources */,
 				D84388911AABEF6200A6336E /* WXLScaleTableViewController.m in Sources */,
 				D8C80C901AA94FAD00882185 /* AppDelegate.m in Sources */,
 				D8C80C8D1AA94FAD00882185 /* main.m in Sources */,
@@ -449,7 +465,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -485,7 +501,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";

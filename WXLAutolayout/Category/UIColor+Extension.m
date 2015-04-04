@@ -1,6 +1,6 @@
 //
 //  UIColor+Extension.m
-//  Reader
+//
 //
 //  Created by wxl on 15/1/10.
 //  Copyright (c) 2015年 wxl. All rights reserved.

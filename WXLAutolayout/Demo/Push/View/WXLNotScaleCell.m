@@ -50,14 +50,14 @@
     bookImageView.backgroundColor = WXLRandomColor();
     [self.contentView addSubview:bookImageView];
     
-    [WXLAutolayout setDevice:NOTSCALE];
+//    [WXLAutolayout setDevice:NOTSCALE];
 
     bookImageView.translatesAutoresizingMaskIntoConstraints = NO;
     [bookImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(15*SCALE);
-        make.top.equalTo(9.5*SCALE);
-        make.width.equalTo(59*SCALE);
-        make.height.equalTo(85*SCALE);
+        make.left.equalTo(15);
+        make.top.equalTo(9.5);
+        make.width.equalTo(59);
+        make.height.equalTo(85);
     }];
 
     UILabel *bookNameLabel = [[UILabel alloc] init];
@@ -66,10 +66,10 @@
     
     bookNameLabel.translatesAutoresizingMaskIntoConstraints = NO;
     [bookNameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(94*SCALE);
-        make.top.equalTo(11*SCALE);
-        make.right.equalTo(0*SCALE);
-        make.height.equalTo(27.5*SCALE);
+        make.left.equalTo(94);
+        make.top.equalTo(11);
+        make.right.equalTo(0);
+        make.height.equalTo(27.5);
     }];
 
     UILabel *bookReadStatusLabel = [[UILabel alloc] init];
@@ -78,10 +78,10 @@
     
     bookReadStatusLabel.translatesAutoresizingMaskIntoConstraints = NO;
     [bookReadStatusLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.equalTo(-20*SCALE);
-        make.top.equalTo(39.5*SCALE);
-        make.width.equalTo(48*SCALE);
-        make.height.equalTo(18*SCALE);
+        make.right.equalTo(-20);
+        make.top.equalTo(39.5);
+        make.width.equalTo(48);
+        make.height.equalTo(18);
     }];
 }
 
