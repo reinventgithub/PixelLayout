@@ -9,12 +9,17 @@
 #import "WXLAutolayout.h"
 #import <sys/utsname.h>
 
-//默认WXLDesignScreenWidth为iPhone6
-//static int screenWidthOfDesign = 375;
-//static NSInteger pixelOrPoint = point;
-//static BOOL isScale = 1;
+static const NSDictionary *deviceDict;
+static CGFloat scale = 1;
+static CGFloat fontScale = 1;
+static NSInteger pixelToPoint = 1;
+static NSInteger fontPixelToPoint = 1;
+static NSString *device;
+static NSInteger isPixel;
+static NSInteger isScale;
 
 @implementation WXLAutolayout
+
 +(void)load
 {
     deviceDict = @{
@@ -37,35 +42,92 @@
                    @"iPadMini2"     : @[@768, @2],
                    @"iPadMini3"     : @[@768, @2]
                    };
-}
 
-//+ (void)setDevice:(NSString *)device
-//{
-//    NSArray *array = deviceDict[device];
-//    NSNumber *designScreenWidth = array[0];
-//    if ([designScreenWidth integerValue]) {
-//        CGFloat currentScreenWidth = [UIScreen mainScreen].bounds.size.width;
-//        scale = currentScreenWidth/[designScreenWidth integerValue];
-//    } else {
-//        scale = 1;
-//    }
-//}
-//
-//+ (void)setDevice:(NSString *)device withPixel:(WXLPixelOrPoint)pixel
-//{
-//    NSArray *array = deviceDict[device];
-//    NSNumber *designScreenWidth = array[0];
-//    NSNumber *multiple = array[1];
-//    if ([designScreenWidth integerValue]) {
-//        CGFloat currentScreenWidth = [UIScreen mainScreen].bounds.size.width;
-//        scale = currentScreenWidth/[designScreenWidth integerValue];
-//        if (pixel) {
-//            pixelToPoint = [multiple integerValue];
-//        }
-//    } else {
-//        scale = 1;
-//    }
-//}
+#ifdef IPHONE
+    device = iPhone;
+#endif
+#ifdef IPHONE3G
+    device = iPhone3G;
+#endif
+#ifdef IPHONE3GS
+    device = iPhone3GS;
+#endif
+#ifdef IPHONE4
+    device = iPhone4;
+#endif
+#ifdef IPHONE4S
+    device = iPhone4S;
+#endif
+#ifdef IPHONE5
+    device = iPhone5;
+#endif
+#ifdef IPHONE5S
+    device = iPhone5S;
+#endif
+#ifdef IPHONE6
+    device = iPhone6;
+#endif
+#ifdef IPHONE6PLUS
+    device = iPhone6Plus;
+#endif
+#ifdef IPAD
+    device = iPad;
+#endif
+#ifdef IPAD2
+    device = iPad2;
+#endif
+#ifdef IPAD3
+    device = iPad3;
+#endif
+#ifdef IPAD4
+    device = iPad4;
+#endif
+#ifdef IPADAIR
+    device = iPadAir;
+#endif
+#ifdef IPADAIR2
+    device = iPadAir2;
+#endif
+#ifdef IPADMINI1G
+    device = iPadMini1G;
+#endif
+#ifdef IPADMINI2
+    device = iPadMini2;
+#endif
+#ifdef IPADMINI3
+    device = iPadMini2;
+#endif
+
+    
+#ifdef POINT
+    isPixel = point;
+#endif
+#ifdef PIXEL
+    isPixel = pixel;
+#endif
+#ifdef PIXELWITHFONT
+    isPixel = pixelWithFont;
+#endif
+    
+
+#ifdef NOTSCALE
+    isScale = notScale;
+#endif
+#ifdef IPADSCALE
+    isScale = iPadScale;
+#endif
+#ifdef IPADSCALEWITHFONT
+    isScale = iPadScaleWithFont;
+#endif
+#ifdef ALLSCALE
+    isScale = allScale;
+#endif
+#ifdef ALLSCALEWITHFONT
+    isScale = allScaleWithFont;
+#endif
+    
+    [self setDevice:device isPixel:isPixel isScale:isScale];
+}
 
 + (void)setDevice:(NSString *)device isPixel:(WXLPixelOrPoint)isPixel isScale:(WXLScale)isScale
 {
@@ -73,48 +135,42 @@
     NSNumber *designScreenWidth = array[0];
     NSNumber *multiple = array[1];
     
-    if (isPixel == pixel) {
+    if(isPixel == point)
+    {
+        pixelToPoint = point;
+        fontPixelToPoint = point;
+    } else if (isPixel == pixel) {
         pixelToPoint = [multiple integerValue];
-        powerLog(pixelToPoint);
+        fontPixelToPoint = point;
     } else if (isPixel == pixelWithFont) {
         pixelToPoint = [multiple integerValue];
         fontPixelToPoint = [multiple integerValue];
     }
     
-    if(isScale == iPadScale) {
-        if ([[WXLAutolayout getCurrentDeviceModel] hasPrefix:@"iPad"]) {
+    if (isScale == notScale) {
+        scale = notScale;
+        fontScale = notScale;
+    } else if(isScale == iPadScale) {
+        if ([[self getCurrentDeviceModel] hasPrefix:@"iPad"]) {
             CGFloat currentScreenWidth = [UIScreen mainScreen].bounds.size.width;
-            scale = currentScreenWidth/[designScreenWidth integerValue];
+            scale = currentScreenWidth / [designScreenWidth integerValue];
+            fontScale = notScale;
         }
     } else if(isScale == iPadScaleWithFont) {
-        if ([[WXLAutolayout getCurrentDeviceModel] hasPrefix:@"iPad"]) {
+        if ([[self getCurrentDeviceModel] hasPrefix:@"iPad"]) {
             CGFloat currentScreenWidth = [UIScreen mainScreen].bounds.size.width;
-            scale = currentScreenWidth/[designScreenWidth integerValue];
+            scale = currentScreenWidth / [designScreenWidth integerValue];
             fontScale = scale;
         }
     } else if(isScale == allScale) {
         CGFloat currentScreenWidth = [UIScreen mainScreen].bounds.size.width;
-        scale = currentScreenWidth/[designScreenWidth integerValue];
+        scale = currentScreenWidth / [designScreenWidth integerValue];
+        fontScale = notScale;
     } else if(isScale == allScaleWithFont) {
         CGFloat currentScreenWidth = [UIScreen mainScreen].bounds.size.width;
-        scale = currentScreenWidth/[designScreenWidth integerValue];
+        scale = currentScreenWidth / [designScreenWidth integerValue];
         fontScale = scale;
     }
-}
-
-+ (CGFloat)scale
-{
-    return scale;
-}
-
-+ (CGFloat)pxToPt:(CGFloat)px
-{
-    return px / pixelToPoint;
-}
-
-+ (CGFloat)scaleWithPxOrPt:(CGFloat)pxOrPt
-{
-    return pxOrPt / pixelToPoint * scale;
 }
 
 + (CGFloat)layout:(CGFloat)pxOrPt
@@ -132,7 +188,6 @@
     struct utsname systemInfo;
     uname(&systemInfo);
     NSString *platform = [NSString stringWithCString:systemInfo.machine encoding:NSUTF8StringEncoding];
-    powerLog(platform);
     
     if ([platform isEqualToString:@"iPhone1,1"]) return @"iPhone";
     if ([platform isEqualToString:@"iPhone1,2"]) return @"iPhone 3G";
@@ -189,82 +244,4 @@
     return platform;
 }
 
-//+ (UIFont *)fontWithPxOrPt:(CGFloat)pxOrPt
-//{
-//    return [UIFont systemFontOfSize:pxOrPt/pixelToPoint];
-//}
-//
-//+ (UIFont *)scaleForFont:(CGFloat)pxOrPt
-//{
-//    return [UIFont systemFontOfSize:pxOrPt*scale];
-//}
-
-//+ (CGFloat)scaleWithDevice:(WXLDeviceOfDesign)device
-//{
-//    if (device != screenWidthOfDesign) {
-//        [WXLAutolayout setDevice:device];
-//    }
-//    return scale;
-//}
-
-//+ (void)load
-//{
-//#ifdef iPhone
-//    WXLDesignscreenWidth = 320;
-//#endif
-//#ifdef iPhone3G
-//    WXLDesignscreenWidth = 320;
-//#endif
-//#ifdef iPhone3GS
-//    WXLDesignscreenWidth = 320;
-//#endif
-//#ifdef iPhone4
-//    WXLDesignscreenWidth = 320;
-//#endif
-//#ifdef iPhone4S
-//    WXLDesignscreenWidth = 320;
-//#endif
-//#ifdef iPhone5
-//    WXLDesignscreenWidth = 320;
-//#endif
-//#ifdef iPhone5S
-//    WXLDesignscreenWidth = 320;
-//#endif
-//#ifdef iPhone6
-//#endif
-//#ifdef iPhone6Plus
-//    WXLDesignScreenWidth = 414;
-//#endif
-//#ifdef iPad
-//    WXLDesignScreenWidth = 768;
-//#endif
-//#ifdef iPad2
-//    WXLDesignScreenWidth = 768;
-//#endif
-//#ifdef ThenewiPad
-//    WXLDesignScreenWidth = 768;
-//#endif
-//#ifdef iPadwithRetinadisplay
-//    WXLDesignScreenWidth = 768;
-//#endif
-//#ifdef iPadmini
-//    WXLDesignScreenWidth = 768;
-//#endif
-//#ifdef iPadmini2
-//    WXLDesignScreenWidth = 768;
-//#endif
-//#ifdef iPadmini3
-//    WXLDesignScreenWidth = 768;
-//#endif
-//#ifdef iPadAir
-//    WXLDesignScreenWidth = 768;
-//#endif
-//#ifdef iPadAir2
-//    WXLDesignScreenWidth = 768;
-//#endif
-//#ifndef NOTSCALE
-//    CGFloat currentScreenWidth = [UIScreen mainScreen].bounds.size.width;
-//    WXLScale = currentScreenWidth/(float)WXLDesignScreenWidth;
-//#endif
-//}
 @end

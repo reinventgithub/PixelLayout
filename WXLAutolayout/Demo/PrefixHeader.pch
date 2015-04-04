@@ -1,0 +1,18 @@
+//
+//  PrefixHeader.pch
+//  WXLAutolayout
+//
+//  Created by wxl on 15/4/4.
+//  Copyright (c) 2015年 wxl. All rights reserved.
+//
+
+#ifndef WXLAutolayout_PrefixHeader_pch
+#define WXLAutolayout_PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+#define IPHONE6
+#define PIXEL
+#define IPADSCALE
+#import "WXLAutolayout.h"
+#endif

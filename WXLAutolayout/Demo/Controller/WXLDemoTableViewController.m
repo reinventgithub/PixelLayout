@@ -16,12 +16,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-//    [WXLAutolayout setDevice:375];
-//    [WXLAutolayout setDevice:iPhone6 withPixel:pixel];
-    [WXLAutolayout setDevice:iPhone6 isPixel:pixel isScale:notScale];
-    self.tableView.rowHeight = scale(208);
-    pixelLog(CGPointMake(1, 2));
-    powerLog(px(20));
+    [WXLAutolayout setDevice:iPhone6 isPixel:point isScale:allScale];
+    self.tableView.rowHeight = layout(104);
 }
 
 - (void)didReceiveMemoryWarning {
