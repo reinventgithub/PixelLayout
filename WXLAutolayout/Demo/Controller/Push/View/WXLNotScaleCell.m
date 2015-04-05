@@ -57,7 +57,7 @@
 
     UILabel *bookNameLabel = [[UILabel alloc] init];
     bookNameLabel.backgroundColor = WXLRandomColor();
-    bookNameLabel.text = @"测试";
+    bookNameLabel.text = @"测试测试测试测试测试测试测试测试测试测试测试";
     bookNameLabel.font = font(13);
     [self.contentView addSubview:bookNameLabel];
     
@@ -71,7 +71,7 @@
 
     UILabel *bookReadStatusLabel = [[UILabel alloc] init];
     bookReadStatusLabel.backgroundColor = WXLRandomColor();
-    bookReadStatusLabel.text = @"测试测试测试测试测试测试测试测试测试测试测试";
+    bookReadStatusLabel.text = @"测试";
     bookNameLabel.font = font(13);
     [self.contentView addSubview:bookReadStatusLabel];
     

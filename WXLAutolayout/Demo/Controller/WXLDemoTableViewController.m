@@ -35,10 +35,10 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
     
     if (0 == (int)indexPath.row) {
-        cell.textLabel.text = @"Scale Autolayout";
+        cell.textLabel.text = @"iPhone6 Point iPadScaleWithFont";
     } else if (1 == (int)indexPath.row)
     {
-        cell.textLabel.text = @"Not Scale Autolayout";
+        cell.textLabel.text = @"iPhone6 Point NotScale";
     }
     
     return cell;
