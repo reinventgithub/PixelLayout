@@ -132,11 +132,7 @@ static NSInteger isScale;
 + (void)setDevice:(NSString *)device isPixel:(WXLPixelOrPoint)isPixel isScale:(WXLScale)isScale
 {
     NSArray *array = deviceDict[device];
-    NSNumber *designScreenWidth;
-    NSInteger interfaceOrientation = [[UIApplication sharedApplication] statusBarOrientation];
-    if (interfaceOrientation == UIDeviceOrientationPortrait || interfaceOrientation == UIDeviceOrientationPortraitUpsideDown) {
-        designScreenWidth = array[0];
-    } else designScreenWidth = array[1];
+    NSNumber *designScreenWidth = array[0];
     NSNumber *multiple = array[2];
     
     if(isPixel == point)
@@ -151,7 +147,11 @@ static NSInteger isScale;
         fontPixelToPoint = [multiple integerValue];
     }
     
-    CGFloat currentScreenWidth = [UIScreen mainScreen].bounds.size.width;
+    CGFloat currentScreenWidth;
+    NSInteger interfaceOrientation = [[UIApplication sharedApplication] statusBarOrientation];
+    if (interfaceOrientation == UIDeviceOrientationPortrait || interfaceOrientation == UIDeviceOrientationPortraitUpsideDown) {
+        currentScreenWidth = [UIScreen mainScreen].bounds.size.width;
+    } else currentScreenWidth = [UIScreen mainScreen].bounds.size.height;
     if (isScale == notScale) {
         scale = notScale;
         fontScale = notScale;
