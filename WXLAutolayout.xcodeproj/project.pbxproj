@@ -10,7 +10,6 @@
 		AF7A746B139D4A3AFBF47D69 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7693F1E5FD54D28BF3EB8A7B /* libPods.a */; };
 		D84388951AABEFA600A6336E /* WXLDemoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D84388941AABEFA600A6336E /* WXLDemoTableViewController.m */; };
 		D8494DF31ACFCF58004C087F /* UIColor+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = D8494DF01ACFCF58004C087F /* UIColor+Extension.m */; };
-		D8494DF41ACFCF58004C087F /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = D8494DF21ACFCF58004C087F /* UIView+Extension.m */; };
 		D8494E011ACFCFCF004C087F /* WXLNotScaleTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8494DF91ACFCFCF004C087F /* WXLNotScaleTableViewController.m */; };
 		D8494E021ACFCFCF004C087F /* WXLScaleTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8494DFB1ACFCFCF004C087F /* WXLScaleTableViewController.m */; };
 		D8494E031ACFCFCF004C087F /* WXLNotScaleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D8494DFE1ACFCFCF004C087F /* WXLNotScaleCell.m */; };
@@ -42,8 +41,6 @@
 		D84388941AABEFA600A6336E /* WXLDemoTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXLDemoTableViewController.m; sourceTree = "<group>"; };
 		D8494DEF1ACFCF58004C087F /* UIColor+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Extension.h"; sourceTree = "<group>"; };
 		D8494DF01ACFCF58004C087F /* UIColor+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Extension.m"; sourceTree = "<group>"; };
-		D8494DF11ACFCF58004C087F /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
-		D8494DF21ACFCF58004C087F /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
 		D8494DF81ACFCFCF004C087F /* WXLNotScaleTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXLNotScaleTableViewController.h; sourceTree = "<group>"; };
 		D8494DF91ACFCFCF004C087F /* WXLNotScaleTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXLNotScaleTableViewController.m; sourceTree = "<group>"; };
 		D8494DFA1ACFCFCF004C087F /* WXLScaleTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXLScaleTableViewController.h; sourceTree = "<group>"; };
@@ -110,8 +107,6 @@
 			children = (
 				D8494DEF1ACFCF58004C087F /* UIColor+Extension.h */,
 				D8494DF01ACFCF58004C087F /* UIColor+Extension.m */,
-				D8494DF11ACFCF58004C087F /* UIView+Extension.h */,
-				D8494DF21ACFCF58004C087F /* UIView+Extension.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -136,10 +131,10 @@
 		D8494DF71ACFCFCF004C087F /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				D8494DF81ACFCFCF004C087F /* WXLNotScaleTableViewController.h */,
-				D8494DF91ACFCFCF004C087F /* WXLNotScaleTableViewController.m */,
 				D8494DFA1ACFCFCF004C087F /* WXLScaleTableViewController.h */,
 				D8494DFB1ACFCFCF004C087F /* WXLScaleTableViewController.m */,
+				D8494DF81ACFCFCF004C087F /* WXLNotScaleTableViewController.h */,
+				D8494DF91ACFCFCF004C087F /* WXLNotScaleTableViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -390,7 +385,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D8494DF41ACFCF58004C087F /* UIView+Extension.m in Sources */,
 				D8494E011ACFCFCF004C087F /* WXLNotScaleTableViewController.m in Sources */,
 				D8494E021ACFCFCF004C087F /* WXLScaleTableViewController.m in Sources */,
 				D8494E031ACFCFCF004C087F /* WXLNotScaleCell.m in Sources */,

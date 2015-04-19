@@ -22,8 +22,8 @@
     self.view.backgroundColor = WXLRandomColor();
     self.navigationItem.title = @"Scale";
     
-    [WXLAutolayout setDevice:iPhone6 isPixel:point isScale:allScaleWithFont];
-    self.tableView.rowHeight = layout(104);
+    [WXLAutolayout setDevice:iPhone6 isPixel:point isScale:allScale];
+    self.tableView.rowHeight = layout(K_CellHeight);
 }
 
 - (void)didReceiveMemoryWarning {

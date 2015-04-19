@@ -8,8 +8,6 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-#import "PowerLog.h"
-#import "UIView+Extension.h"
 
 #define layout(pxOrPt) [WXLAutolayout layout:pxOrPt]
 #define font(pxOrPt) [WXLAutolayout font:pxOrPt]

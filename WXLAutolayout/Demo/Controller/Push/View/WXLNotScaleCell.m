@@ -35,7 +35,6 @@
 {
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
         self.backgroundColor = [UIColor clearColor];
-        
         [self setupBookCell];
     }
     return self;
@@ -46,7 +45,6 @@
     UIImageView *bookImageView = [[UIImageView alloc] init];
     bookImageView.backgroundColor = WXLRandomColor();
     [self.contentView addSubview:bookImageView];
-
     bookImageView.translatesAutoresizingMaskIntoConstraints = NO;
     [bookImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(layout(15));
@@ -58,9 +56,8 @@
     UILabel *bookNameLabel = [[UILabel alloc] init];
     bookNameLabel.backgroundColor = WXLRandomColor();
     bookNameLabel.text = @"测试测试测试测试测试测试测试测试测试测试测试";
-    bookNameLabel.font = font(13);
+    bookNameLabel.font = font(16);
     [self.contentView addSubview:bookNameLabel];
-    
     bookNameLabel.translatesAutoresizingMaskIntoConstraints = NO;
     [bookNameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(layout(94));
@@ -72,9 +69,8 @@
     UILabel *bookReadStatusLabel = [[UILabel alloc] init];
     bookReadStatusLabel.backgroundColor = WXLRandomColor();
     bookReadStatusLabel.text = @"测试";
-    bookNameLabel.font = font(13);
+    bookReadStatusLabel.font = font(16);
     [self.contentView addSubview:bookReadStatusLabel];
-    
     bookReadStatusLabel.translatesAutoresizingMaskIntoConstraints = NO;
     [bookReadStatusLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.equalTo(layout(-20));

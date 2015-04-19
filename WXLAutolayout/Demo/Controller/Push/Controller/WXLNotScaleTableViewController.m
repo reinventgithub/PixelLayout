@@ -23,7 +23,7 @@
     self.navigationItem.title = @"Not Scale";
     
     [WXLAutolayout setDevice:iPhone6 isPixel:point isScale:notScale];
-    self.tableView.rowHeight = layout(104);
+    self.tableView.rowHeight = layout(K_CellHeight);
 }
 
 #pragma mark - Table view data source

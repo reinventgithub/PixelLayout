@@ -10,9 +10,9 @@
 #import <sys/utsname.h>
 
 static const NSDictionary *deviceDict;
-static CGFloat scale = 1;
-static CGFloat fontScale = 1;
-static NSInteger pixelToPoint = 1;
+static CGFloat scale              = 1;
+static CGFloat fontScale          = 1;
+static NSInteger pixelToPoint     = 1;
 static NSInteger fontPixelToPoint = 1;
 static NSString *device;
 static NSInteger isPixel;
@@ -23,26 +23,26 @@ static NSInteger isScale;
 +(void)load
 {
     deviceDict = @{
-                   @"iPhone"        : @[@320, @1],
-                   @"iPhone3G"      : @[@320, @1],
-                   @"iPhone3GS"     : @[@320, @1],
-                   @"iPhone4"       : @[@320, @2],
-                   @"iPhone4S"      : @[@320, @2],
-                   @"iPhone5"       : @[@320, @2],
-                   @"iPhone5S"      : @[@320, @2],
-                   @"iPhone6"       : @[@375, @2],
-                   @"iPhone6Plus"   : @[@414, @3],
-                   @"iPad"          : @[@768, @1],
-                   @"iPad2"         : @[@768, @1],
-                   @"iPad3"         : @[@768, @2],
-                   @"iPad4"         : @[@768, @2],
-                   @"iPadAir"       : @[@768, @1],
-                   @"iPadAir2"      : @[@768, @2],
-                   @"iPadMini1G"    : @[@768, @1],
-                   @"iPadMini2"     : @[@768, @2],
-                   @"iPadMini3"     : @[@768, @2]
-                   };
-
+                   @"iPhone"      : @[@320, @480, @1],
+                   @"iPhone3G"    : @[@320, @480, @1],
+                   @"iPhone3GS"   : @[@320, @480, @1],
+                   @"iPhone4"     : @[@320, @480, @2],
+                   @"iPhone4S"    : @[@320, @480, @2],
+                   @"iPhone5"     : @[@320, @480, @2],
+                   @"iPhone5S"    : @[@320, @480, @2],
+                   @"iPhone6"     : @[@375, @667, @2],
+                   @"iPhone6Plus" : @[@414, @736, @3],
+                   @"iPad"        : @[@768, @1024, @1],
+                   @"iPad2"       : @[@768, @1024, @1],
+                   @"iPad3"       : @[@768, @1024, @2],
+                   @"iPad4"       : @[@768, @1024, @2],
+                   @"iPadAir"     : @[@768, @1024, @1],
+                   @"iPadAir2"    : @[@768, @1024, @2],
+                   @"iPadMini1G"  : @[@768, @1024, @1],
+                   @"iPadMini2"   : @[@768, @1024, @2],
+                   @"iPadMini3"   : @[@768, @1024, @2]
+                  };
+    
 #ifdef IPHONE
     device = iPhone;
 #endif
@@ -95,7 +95,7 @@ static NSInteger isScale;
     device = iPadMini2;
 #endif
 #ifdef IPADMINI3
-    device = iPadMini2;
+    device = iPadMini3;
 #endif
 
     
@@ -132,8 +132,12 @@ static NSInteger isScale;
 + (void)setDevice:(NSString *)device isPixel:(WXLPixelOrPoint)isPixel isScale:(WXLScale)isScale
 {
     NSArray *array = deviceDict[device];
-    NSNumber *designScreenWidth = array[0];
-    NSNumber *multiple = array[1];
+    NSNumber *designScreenWidth;
+    NSInteger interfaceOrientation = [[UIApplication sharedApplication] statusBarOrientation];
+    if (interfaceOrientation == UIDeviceOrientationPortrait || interfaceOrientation == UIDeviceOrientationPortraitUpsideDown) {
+        designScreenWidth = array[0];
+    } else designScreenWidth = array[1];
+    NSNumber *multiple = array[2];
     
     if(isPixel == point)
     {
@@ -147,27 +151,24 @@ static NSInteger isScale;
         fontPixelToPoint = [multiple integerValue];
     }
     
+    CGFloat currentScreenWidth = [UIScreen mainScreen].bounds.size.width;
     if (isScale == notScale) {
         scale = notScale;
         fontScale = notScale;
     } else if(isScale == iPadScale) {
         if ([[self getCurrentDeviceModel] hasPrefix:@"iPad"]) {
-            CGFloat currentScreenWidth = [UIScreen mainScreen].bounds.size.width;
             scale = currentScreenWidth / [designScreenWidth integerValue];
             fontScale = notScale;
         }
     } else if(isScale == iPadScaleWithFont) {
         if ([[self getCurrentDeviceModel] hasPrefix:@"iPad"]) {
-            CGFloat currentScreenWidth = [UIScreen mainScreen].bounds.size.width;
             scale = currentScreenWidth / [designScreenWidth integerValue];
             fontScale = scale;
         }
     } else if(isScale == allScale) {
-        CGFloat currentScreenWidth = [UIScreen mainScreen].bounds.size.width;
         scale = currentScreenWidth / [designScreenWidth integerValue];
         fontScale = notScale;
     } else if(isScale == allScaleWithFont) {
-        CGFloat currentScreenWidth = [UIScreen mainScreen].bounds.size.width;
         scale = currentScreenWidth / [designScreenWidth integerValue];
         fontScale = scale;
     }
@@ -190,56 +191,56 @@ static NSInteger isScale;
     NSString *platform = [NSString stringWithCString:systemInfo.machine encoding:NSUTF8StringEncoding];
     
     if ([platform isEqualToString:@"iPhone1,1"]) return @"iPhone";
-    if ([platform isEqualToString:@"iPhone1,2"]) return @"iPhone 3G";
-    if ([platform isEqualToString:@"iPhone2,1"]) return @"iPhone 3GS";
-    if ([platform isEqualToString:@"iPhone3,1"]) return @"iPhone 4";
-    if ([platform isEqualToString:@"iPhone3,2"]) return @"iPhone 4";
-    if ([platform isEqualToString:@"iPhone3,3"]) return @"iPhone 4";
-    if ([platform isEqualToString:@"iPhone4,1"]) return @"iPhone 4S";
-    if ([platform isEqualToString:@"iPhone5,1"]) return @"iPhone 5";
-    if ([platform isEqualToString:@"iPhone5,2"]) return @"iPhone 5";
-    if ([platform isEqualToString:@"iPhone5,3"]) return @"iPhone 5c";
-    if ([platform isEqualToString:@"iPhone5,4"]) return @"iPhone 5c";
-    if ([platform isEqualToString:@"iPhone6,1"]) return @"iPhone 5s";
-    if ([platform isEqualToString:@"iPhone6,2"]) return @"iPhone 5s";
-    if ([platform isEqualToString:@"iPhone7,1"]) return @"iPhone 6 Plus";
-    if ([platform isEqualToString:@"iPhone7,2"]) return @"iPhone 6";
+    if ([platform isEqualToString:@"iPhone1,2"]) return @"iPhone3G";
+    if ([platform isEqualToString:@"iPhone2,1"]) return @"iPhone3GS";
+    if ([platform isEqualToString:@"iPhone3,1"]) return @"iPhone4";
+    if ([platform isEqualToString:@"iPhone3,2"]) return @"iPhone4";
+    if ([platform isEqualToString:@"iPhone3,3"]) return @"iPhone4";
+    if ([platform isEqualToString:@"iPhone4,1"]) return @"iPhone4S";
+    if ([platform isEqualToString:@"iPhone5,1"]) return @"iPhone5";
+    if ([platform isEqualToString:@"iPhone5,2"]) return @"iPhone5";
+    if ([platform isEqualToString:@"iPhone5,3"]) return @"iPhone5c";
+    if ([platform isEqualToString:@"iPhone5,4"]) return @"iPhone5c";
+    if ([platform isEqualToString:@"iPhone6,1"]) return @"iPhone5s";
+    if ([platform isEqualToString:@"iPhone6,2"]) return @"iPhone5s";
+    if ([platform isEqualToString:@"iPhone7,1"]) return @"iPhone6Plus";
+    if ([platform isEqualToString:@"iPhone7,2"]) return @"iPhone6";
     
     if ([platform isEqualToString:@"iPad1,1"])   return @"iPad";
-    if ([platform isEqualToString:@"iPad2,1"])   return @"iPad 2";
-    if ([platform isEqualToString:@"iPad2,2"])   return @"iPad 2";
-    if ([platform isEqualToString:@"iPad2,3"])   return @"iPad 2";
-    if ([platform isEqualToString:@"iPad2,4"])   return @"iPad 2";
-    if ([platform isEqualToString:@"iPad3,1"])   return @"iPad 3";
-    if ([platform isEqualToString:@"iPad3,2"])   return @"iPad 3";
-    if ([platform isEqualToString:@"iPad3,3"])   return @"iPad 3";
-    if ([platform isEqualToString:@"iPad3,4"])   return @"iPad 4";
-    if ([platform isEqualToString:@"iPad3,5"])   return @"iPad 4";
-    if ([platform isEqualToString:@"iPad3,6"])   return @"iPad 4";
-    if ([platform isEqualToString:@"iPad4,1"])   return @"iPad Air";
-    if ([platform isEqualToString:@"iPad4,2"])   return @"iPad Air";
-    if ([platform isEqualToString:@"iPad4,3"])   return @"iPad Air";
-    if ([platform isEqualToString:@"iPad5,3"])   return @"iPad Air 2";
-    if ([platform isEqualToString:@"iPad5,4"])   return @"iPad Air 2";
+    if ([platform isEqualToString:@"iPad2,1"])   return @"iPad2";
+    if ([platform isEqualToString:@"iPad2,2"])   return @"iPad2";
+    if ([platform isEqualToString:@"iPad2,3"])   return @"iPad2";
+    if ([platform isEqualToString:@"iPad2,4"])   return @"iPad2";
+    if ([platform isEqualToString:@"iPad3,1"])   return @"iPad3";
+    if ([platform isEqualToString:@"iPad3,2"])   return @"iPad3";
+    if ([platform isEqualToString:@"iPad3,3"])   return @"iPad3";
+    if ([platform isEqualToString:@"iPad3,4"])   return @"iPad4";
+    if ([platform isEqualToString:@"iPad3,5"])   return @"iPad4";
+    if ([platform isEqualToString:@"iPad3,6"])   return @"iPad4";
+    if ([platform isEqualToString:@"iPad4,1"])   return @"iPadAir";
+    if ([platform isEqualToString:@"iPad4,2"])   return @"iPadAir";
+    if ([platform isEqualToString:@"iPad4,3"])   return @"iPadAir";
+    if ([platform isEqualToString:@"iPad5,3"])   return @"iPadAir2";
+    if ([platform isEqualToString:@"iPad5,4"])   return @"iPadAir2";
     
-    if ([platform isEqualToString:@"iPad2,5"])   return @"iPad Mini 1G";
-    if ([platform isEqualToString:@"iPad2,6"])   return @"iPad Mini 1G";
-    if ([platform isEqualToString:@"iPad2,7"])   return @"iPad Mini 1G";
-    if ([platform isEqualToString:@"iPad4,4"])   return @"iPad Mini 2";
-    if ([platform isEqualToString:@"iPad4,5"])   return @"iPad Mini 2";
-    if ([platform isEqualToString:@"iPad4,6"])   return @"iPad Mini 2";
-    if ([platform isEqualToString:@"iPad4,7"])   return @"iPad Mini 3";
-    if ([platform isEqualToString:@"iPad4,8"])   return @"iPad Mini 3";
-    if ([platform isEqualToString:@"iPad4,9"])   return @"iPad Mini 3";
+    if ([platform isEqualToString:@"iPad2,5"])   return @"iPadMini1G";
+    if ([platform isEqualToString:@"iPad2,6"])   return @"iPadMini1G";
+    if ([platform isEqualToString:@"iPad2,7"])   return @"iPadMini1G";
+    if ([platform isEqualToString:@"iPad4,4"])   return @"iPadMini2";
+    if ([platform isEqualToString:@"iPad4,5"])   return @"iPadMini2";
+    if ([platform isEqualToString:@"iPad4,6"])   return @"iPadMini2";
+    if ([platform isEqualToString:@"iPad4,7"])   return @"iPadMini3";
+    if ([platform isEqualToString:@"iPad4,8"])   return @"iPadMini3";
+    if ([platform isEqualToString:@"iPad4,9"])   return @"iPadMini3";
     
-    if ([platform isEqualToString:@"iPod1,1"])   return @"iPod Touch";
-    if ([platform isEqualToString:@"iPod2,1"])   return @"iPod Touch 2G";
-    if ([platform isEqualToString:@"iPod3,1"])   return @"iPod Touch 3G";
-    if ([platform isEqualToString:@"iPod4,1"])   return @"iPod Touch 4G";
-    if ([platform isEqualToString:@"iPod5,1"])   return @"iPod Touch 5G";
+    if ([platform isEqualToString:@"iPod1,1"])   return @"iPodTouch";
+    if ([platform isEqualToString:@"iPod2,1"])   return @"iPodTouch2G";
+    if ([platform isEqualToString:@"iPod3,1"])   return @"iPodTouch3G";
+    if ([platform isEqualToString:@"iPod4,1"])   return @"iPodTouch4G";
+    if ([platform isEqualToString:@"iPod5,1"])   return @"iPodTouch5G";
     
-    if ([platform isEqualToString:@"i386"])      return @"iPhone Simulator";
-    if ([platform isEqualToString:@"x86_64"])    return @"iPhone Simulator";
+    if ([platform isEqualToString:@"i386"])      return @"iPhoneSimulator";
+    if ([platform isEqualToString:@"x86_64"])    return @"iPhoneSimulator";
     
     return platform;
 }

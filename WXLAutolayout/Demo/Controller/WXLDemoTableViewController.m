@@ -17,7 +17,7 @@
     [super viewDidLoad];
     
     [WXLAutolayout setDevice:iPhone6 isPixel:point isScale:allScale];
-    self.tableView.rowHeight = layout(104);
+    self.tableView.rowHeight = layout(K_CellHeight);
 }
 
 - (void)didReceiveMemoryWarning {
