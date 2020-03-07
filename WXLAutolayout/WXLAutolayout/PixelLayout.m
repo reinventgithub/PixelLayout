@@ -8,6 +8,7 @@
 
 #import "WXLAutolayout.h"
 #import <sys/utsname.h>
+#import "PowerLog.h"
 
 static const NSDictionary *deviceDict;
 static CGFloat scale              = 1;
@@ -20,8 +21,7 @@ static NSInteger isScale;
 
 @implementation WXLAutolayout
 
-+(void)load
-{
++ (void)load {
     deviceDict = @{
                    @"iPhone"      : @[@320, @480, @1],
                    @"iPhone3G"    : @[@320, @480, @1],
@@ -129,8 +129,7 @@ static NSInteger isScale;
     [self setDevice:device isPixel:isPixel isScale:isScale];
 }
 
-+ (void)setDevice:(NSString *)device isPixel:(WXLPixelOrPoint)isPixel isScale:(WXLScale)isScale
-{
++ (void)setDevice:(NSString *)device isPixel:(WXLPixelOrPoint)isPixel isScale:(WXLScale)isScale {
     NSArray *array = deviceDict[device];
     NSNumber *designScreenWidth = array[0];
     NSNumber *multiple = array[2];
@@ -149,9 +148,14 @@ static NSInteger isScale;
     
     CGFloat currentScreenWidth;
     NSInteger interfaceOrientation = [[UIApplication sharedApplication] statusBarOrientation];
+    powerLog(interfaceOrientation);
     if (interfaceOrientation == UIDeviceOrientationPortrait || interfaceOrientation == UIDeviceOrientationPortraitUpsideDown) {
         currentScreenWidth = [UIScreen mainScreen].bounds.size.width;
-    } else currentScreenWidth = [UIScreen mainScreen].bounds.size.height;
+    }
+    else {
+        currentScreenWidth = [UIScreen mainScreen].bounds.size.height;
+    }
+    
     if (isScale == notScale) {
         scale = notScale;
         fontScale = notScale;
@@ -174,18 +178,15 @@ static NSInteger isScale;
     }
 }
 
-+ (CGFloat)layout:(CGFloat)pxOrPt
-{
++ (CGFloat)layout:(CGFloat)pxOrPt {
     return pxOrPt / pixelToPoint * scale;
 }
 
-+ (UIFont *)font:(CGFloat)pxOrPt
-{
++ (UIFont *)font:(CGFloat)pxOrPt {
     return [UIFont systemFontOfSize:pxOrPt / fontPixelToPoint * fontScale];
 }
 
-+ (NSString *)getCurrentDeviceModel
-{
++ (NSString *)getCurrentDeviceModel {
     struct utsname systemInfo;
     uname(&systemInfo);
     NSString *platform = [NSString stringWithCString:systemInfo.machine encoding:NSUTF8StringEncoding];

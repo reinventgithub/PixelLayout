@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface UIColor (Extension)
-
 UIColor* WXLColor(double r, double g, double b);
 UIColor* WXLRandomColor();
 @end

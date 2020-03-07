@@ -9,7 +9,6 @@
 #import "UIColor+Extension.h"
 
 @implementation UIColor (Extension)
-
 UIColor* WXLColor(double r, double g, double b)
 {
     return [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0];
