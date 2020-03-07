@@ -41,7 +41,7 @@ static double _preScale;
                    @"iPadMini1G"  : @[@768, @1024, @1],
                    @"iPadMini2"   : @[@768, @1024, @2],
                    @"iPadMini3"   : @[@768, @1024, @2],
-                   };
+                  };
     
     NSString *device;
     NSInteger isPixel;
@@ -107,7 +107,7 @@ static double _preScale;
 #ifdef IPADMINI3
     device = iPadMini3;
 #endif
-    
+
     
 #ifdef POINT
     isPixel = point;
@@ -119,7 +119,7 @@ static double _preScale;
     isPixel = pixelWithFont;
 #endif
     
-    
+
 #ifdef NOTSCALE
     isScale = notScale;
 #endif
@@ -185,7 +185,7 @@ static double _preScale;
     else {
         currentScreenHeight = [UIScreen mainScreen].bounds.size.height;
     }
-    
+
     if (isScale == notScale) {
         scale = notScale;
         fontScale = notScale;
@@ -218,6 +218,10 @@ static double _preScale;
 
 + (double)layout:(double)pxOrPt {
     return pxOrPt / pixelToPoint * scale;
+}
+
++ (double)partLayout:(double)pxOrPt unLayoutPart:(double)unLayout {
+    return (pxOrPt - unLayout) / pixelToPoint * scale + unLayout / pixelToPoint;
 }
 
 + (double)prelayout:(double)pxOrPt {
