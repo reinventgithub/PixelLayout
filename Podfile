@@ -1,7 +1,8 @@
-platform :ios, "6.0"
-
-pod "Masonry"
-
-target :WXLAutolayoutTests, :exclusive => true do
-  # pod 'Kiwi'
+platform :ios, "7.0"
+target 'WXLAutolayout' do
+	pod "Masonry"
+	target 'WXLAutolayoutTests' do
+		inherit! :search_paths
+  		pod 'Kiwi'
+	end
 end

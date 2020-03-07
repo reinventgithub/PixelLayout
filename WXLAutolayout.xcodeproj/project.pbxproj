@@ -8,13 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		AF7A746B139D4A3AFBF47D69 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7693F1E5FD54D28BF3EB8A7B /* libPods.a */; };
+		D833E2CB1B9B2A40008872C8 /* PixelLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = D833E2CA1B9B2A40008872C8 /* PixelLayout.m */; };
+		D833E2CE1B9B2BF6008872C8 /* PLAllScaleWithFontViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D833E2CD1B9B2BF6008872C8 /* PLAllScaleWithFontViewController.m */; };
+		D833E2D21B9B2CA3008872C8 /* HexColors.m in Sources */ = {isa = PBXBuildFile; fileRef = D833E2D11B9B2CA3008872C8 /* HexColors.m */; };
 		D84388951AABEFA600A6336E /* WXLDemoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D84388941AABEFA600A6336E /* WXLDemoTableViewController.m */; };
 		D8494DF31ACFCF58004C087F /* UIColor+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = D8494DF01ACFCF58004C087F /* UIColor+Extension.m */; };
 		D8494E011ACFCFCF004C087F /* WXLNotScaleTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8494DF91ACFCFCF004C087F /* WXLNotScaleTableViewController.m */; };
 		D8494E021ACFCFCF004C087F /* WXLScaleTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8494DFB1ACFCFCF004C087F /* WXLScaleTableViewController.m */; };
 		D8494E031ACFCFCF004C087F /* WXLNotScaleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D8494DFE1ACFCFCF004C087F /* WXLNotScaleCell.m */; };
 		D8494E041ACFCFCF004C087F /* WXLScaleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D8494E001ACFCFCF004C087F /* WXLScaleCell.m */; };
-		D85808BB1AAD3FF8003836F1 /* WXLAutolayout.m in Sources */ = {isa = PBXBuildFile; fileRef = D85808BA1AAD3FF8003836F1 /* WXLAutolayout.m */; };
 		D8C80C8D1AA94FAD00882185 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D8C80C8C1AA94FAD00882185 /* main.m */; };
 		D8C80C901AA94FAD00882185 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D8C80C8F1AA94FAD00882185 /* AppDelegate.m */; };
 		D8C80C961AA94FAD00882185 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8C80C941AA94FAD00882185 /* Main.storyboard */; };
@@ -37,6 +39,13 @@
 		6C2D2CE28DFA6BFEBDA8DA57 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		7693F1E5FD54D28BF3EB8A7B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		9184A2B9B38BE1E9E1A330E2 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		D833E2C91B9B2A40008872C8 /* PixelLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PixelLayout.h; sourceTree = "<group>"; };
+		D833E2CA1B9B2A40008872C8 /* PixelLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PixelLayout.m; sourceTree = "<group>"; };
+		D833E2CC1B9B2BF6008872C8 /* PLAllScaleWithFontViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLAllScaleWithFontViewController.h; sourceTree = "<group>"; };
+		D833E2CD1B9B2BF6008872C8 /* PLAllScaleWithFontViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLAllScaleWithFontViewController.m; sourceTree = "<group>"; };
+		D833E2D01B9B2CA3008872C8 /* HexColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HexColors.h; sourceTree = "<group>"; };
+		D833E2D11B9B2CA3008872C8 /* HexColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HexColors.m; sourceTree = "<group>"; };
+		D833E2D41B9B2CD1008872C8 /* PowerLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PowerLog.h; sourceTree = "<group>"; };
 		D84388931AABEFA600A6336E /* WXLDemoTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXLDemoTableViewController.h; sourceTree = "<group>"; };
 		D84388941AABEFA600A6336E /* WXLDemoTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXLDemoTableViewController.m; sourceTree = "<group>"; };
 		D8494DEF1ACFCF58004C087F /* UIColor+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Extension.h"; sourceTree = "<group>"; };
@@ -50,9 +59,6 @@
 		D8494DFF1ACFCFCF004C087F /* WXLScaleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXLScaleCell.h; sourceTree = "<group>"; };
 		D8494E001ACFCFCF004C087F /* WXLScaleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXLScaleCell.m; sourceTree = "<group>"; };
 		D8494E051ACFD05F004C087F /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
-		D85808B91AAD3FF8003836F1 /* WXLAutolayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXLAutolayout.h; sourceTree = "<group>"; };
-		D85808BA1AAD3FF8003836F1 /* WXLAutolayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXLAutolayout.m; sourceTree = "<group>"; };
-		D87F23871ACE61A3004F1E9E /* PowerLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PowerLog.h; sourceTree = "<group>"; };
 		D8C80C871AA94FAD00882185 /* WXLAutolayout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WXLAutolayout.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8C80C8B1AA94FAD00882185 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D8C80C8C1AA94FAD00882185 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -102,6 +108,34 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		D833E2C81B9B2A40008872C8 /* PixelLayout */ = {
+			isa = PBXGroup;
+			children = (
+				D833E2C91B9B2A40008872C8 /* PixelLayout.h */,
+				D833E2CA1B9B2A40008872C8 /* PixelLayout.m */,
+			);
+			name = PixelLayout;
+			path = WXLAutolayout/PixelLayout;
+			sourceTree = SOURCE_ROOT;
+		};
+		D833E2CF1B9B2CA3008872C8 /* HexColors */ = {
+			isa = PBXGroup;
+			children = (
+				D833E2D01B9B2CA3008872C8 /* HexColors.h */,
+				D833E2D11B9B2CA3008872C8 /* HexColors.m */,
+			);
+			path = HexColors;
+			sourceTree = "<group>";
+		};
+		D833E2D31B9B2CD1008872C8 /* PowerLog */ = {
+			isa = PBXGroup;
+			children = (
+				D833E2D41B9B2CD1008872C8 /* PowerLog.h */,
+			);
+			name = PowerLog;
+			path = WXLAutolayout/Demo/Library/PowerLog;
+			sourceTree = SOURCE_ROOT;
+		};
 		D8494DEE1ACFCF58004C087F /* Category */ = {
 			isa = PBXGroup;
 			children = (
@@ -114,7 +148,8 @@
 		D8494DF51ACFCF8B004C087F /* Library */ = {
 			isa = PBXGroup;
 			children = (
-				D87F23861ACE61A3004F1E9E /* PowerLog */,
+				D833E2D31B9B2CD1008872C8 /* PowerLog */,
+				D833E2CF1B9B2CA3008872C8 /* HexColors */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -135,6 +170,8 @@
 				D8494DFB1ACFCFCF004C087F /* WXLScaleTableViewController.m */,
 				D8494DF81ACFCFCF004C087F /* WXLNotScaleTableViewController.h */,
 				D8494DF91ACFCFCF004C087F /* WXLNotScaleTableViewController.m */,
+				D833E2CC1B9B2BF6008872C8 /* PLAllScaleWithFontViewController.h */,
+				D833E2CD1B9B2BF6008872C8 /* PLAllScaleWithFontViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -148,24 +185,6 @@
 				D8494E001ACFCFCF004C087F /* WXLScaleCell.m */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		D85808B81AAD3FF8003836F1 /* WXLAutolayout */ = {
-			isa = PBXGroup;
-			children = (
-				D85808B91AAD3FF8003836F1 /* WXLAutolayout.h */,
-				D85808BA1AAD3FF8003836F1 /* WXLAutolayout.m */,
-			);
-			path = WXLAutolayout;
-			sourceTree = "<group>";
-		};
-		D87F23861ACE61A3004F1E9E /* PowerLog */ = {
-			isa = PBXGroup;
-			children = (
-				D87F23871ACE61A3004F1E9E /* PowerLog.h */,
-			);
-			name = PowerLog;
-			path = ../../PowerLog;
 			sourceTree = "<group>";
 		};
 		D8C80C7E1AA94FAD00882185 = {
@@ -192,7 +211,6 @@
 			isa = PBXGroup;
 			children = (
 				D8C80CEF1AA99FDE00882185 /* Demo */,
-				D85808B81AAD3FF8003836F1 /* WXLAutolayout */,
 				D8C80C8E1AA94FAD00882185 /* AppDelegate.h */,
 				D8C80C8F1AA94FAD00882185 /* AppDelegate.m */,
 				D8C80C941AA94FAD00882185 /* Main.storyboard */,
@@ -233,6 +251,7 @@
 			isa = PBXGroup;
 			children = (
 				D8C80CF01AA99FDE00882185 /* Controller */,
+				D833E2C81B9B2A40008872C8 /* PixelLayout */,
 				D8494DEE1ACFCF58004C087F /* Category */,
 				D8494DF51ACFCF8B004C087F /* Library */,
 				D8494E051ACFD05F004C087F /* PrefixHeader.pch */,
@@ -388,12 +407,14 @@
 				D8494E011ACFCFCF004C087F /* WXLNotScaleTableViewController.m in Sources */,
 				D8494E021ACFCFCF004C087F /* WXLScaleTableViewController.m in Sources */,
 				D8494E031ACFCFCF004C087F /* WXLNotScaleCell.m in Sources */,
+				D833E2D21B9B2CA3008872C8 /* HexColors.m in Sources */,
+				D833E2CB1B9B2A40008872C8 /* PixelLayout.m in Sources */,
 				D8C80C901AA94FAD00882185 /* AppDelegate.m in Sources */,
 				D8C80C8D1AA94FAD00882185 /* main.m in Sources */,
 				D8494E041ACFCFCF004C087F /* WXLScaleCell.m in Sources */,
 				D8494DF31ACFCF58004C087F /* UIColor+Extension.m in Sources */,
+				D833E2CE1B9B2BF6008872C8 /* PLAllScaleWithFontViewController.m in Sources */,
 				D84388951AABEFA600A6336E /* WXLDemoTableViewController.m in Sources */,
-				D85808BB1AAD3FF8003836F1 /* WXLAutolayout.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

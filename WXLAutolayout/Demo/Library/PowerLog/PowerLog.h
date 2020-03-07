@@ -10,12 +10,13 @@
 #import <UIKit/UIKit.h>
 
 #ifdef DEBUG
-#define powerLog(value) fprintf(stderr,"line:%d function:%s %s = %s\n", __LINE__, __FUNCTION__, (#value), [_powerLog(@encode(__typeof__((value))), (value)) UTF8String])
+#define PowerLog(value) fprintf(stderr,"%d %s %%%s %s = %s\n\n", __LINE__, __FUNCTION__, @encode(__typeof__((value))), (#value), [_powerLog(@encode(__typeof__((value))), (value)) UTF8String])
 #else
-#define powerLog(value)
+#define PowerLog(value)
 #endif
 
-static inline NSString* _powerLog(const char *type, ...) {
+static inline NSString* _powerLog(const char *type, ...)
+{
     va_list v;
     va_start(v, type);
     NSNumber *number;

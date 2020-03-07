@@ -15,8 +15,10 @@
 #define IPHONE6
 #define PIXEL
 #define IPADSCALE
-#import "WXLAutolayout.h"
+#import "PixelLayout.h"
 
 static NSInteger K_CellHeight = 104;
 
 #endif
+
+

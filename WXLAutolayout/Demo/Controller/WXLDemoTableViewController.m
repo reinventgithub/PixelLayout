@@ -7,16 +7,17 @@
 //
 
 #import "WXLDemoTableViewController.h"
-#import "WXLAutolayout.h"
+#import "PixelLayout.h"
 #import "WXLScaleTableViewController.h"
 #import "WXLNotScaleTableViewController.h"
+#import "PLAllScaleWithFontViewController.h"
 
 @implementation WXLDemoTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [WXLAutolayout setDevice:iPhone6 isPixel:point isScale:allScale];
+    [PixelLayout setDevice:iPhone6 isPixel:point isScale:allScale];
     self.tableView.rowHeight = layout(K_CellHeight);
 }
 
@@ -27,7 +28,7 @@
 #pragma mark - Table view data source
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 2;
+    return 3;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -36,9 +37,12 @@
     
     if (0 == (int)indexPath.row) {
         cell.textLabel.text = @"iPhone6 Point iPadScaleWithFont";
-    } else if (1 == (int)indexPath.row)
-    {
+    }
+    else if (1 == (int)indexPath.row) {
         cell.textLabel.text = @"iPhone6 Point NotScale";
+    }
+    else if (2 == (int)indexPath.row)  {
+        cell.textLabel.text = @"iPhone5 Pixel AllScaleWithFont";
     }
     
     return cell;
@@ -49,10 +53,15 @@
     if (0 == (int)indexPath.row) {
         WXLScaleTableViewController *scaleTVC = [[WXLScaleTableViewController alloc] init];
         [self.navigationController pushViewController:scaleTVC animated:YES];
-    } else if (1 == (int)indexPath.row)
-    {
+    }
+    else if (1 == (int)indexPath.row) {
         WXLNotScaleTableViewController *notScaleTVC = [[WXLNotScaleTableViewController alloc] init];
         [self.navigationController pushViewController:notScaleTVC animated:YES];
+    }
+    else if (2 == (int)indexPath.row) {
+        PLAllScaleWithFontViewController *allScaleWithFontVC = [[PLAllScaleWithFontViewController alloc] init];
+        allScaleWithFontVC.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:allScaleWithFontVC animated:YES];
     }
 }
 
