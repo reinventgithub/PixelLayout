@@ -1,10 +1,20 @@
 PODS:
-  - Masonry (0.6.1)
+  - Kiwi (2.4.0)
+  - Masonry (1.1.0)
 
 DEPENDENCIES:
+  - Kiwi
   - Masonry
 
-SPEC CHECKSUMS:
-  Masonry: 4972309f2f134de9dd312f4dc4a21359b50e6caa
+SPEC REPOS:
+  trunk:
+    - Kiwi
+    - Masonry
 
-COCOAPODS: 0.36.3
+SPEC CHECKSUMS:
+  Kiwi: f49c9d54b28917df5928fe44968a39ed198cb8a8
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+
+PODFILE CHECKSUM: 662cfc659aab3d386ff7d754e55bb3818d05fa0c
+
+COCOAPODS: 1.8.4

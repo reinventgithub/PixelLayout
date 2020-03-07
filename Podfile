@@ -1,7 +1,7 @@
 platform :ios, "7.0"
-target 'WXLAutolayout' do
+target 'PixelLayout' do
 	pod "Masonry"
-	target 'WXLAutolayoutTests' do
+	target 'PixelLayoutTests' do
 		inherit! :search_paths
   		pod 'Kiwi'
 	end
